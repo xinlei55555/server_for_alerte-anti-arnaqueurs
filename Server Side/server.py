@@ -8,10 +8,11 @@ from sms_testing_old import message_rating
 #import all functions
 
 app = Flask(__name__)
-data = {"userId": 1, "id": 1, "title": "HELLO XINLEIIIIIIIIIIII"}
+
 
 @app.route("/")
 def home():
+  data = {"userId": 1, "id": 1, "title": "HELLO XINLEI"}
   return jsonify(data)
 
 #link/phonenumber?number=.......&sender=.........
