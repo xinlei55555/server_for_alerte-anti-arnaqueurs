@@ -1,0 +1,3 @@
+1. the procfile cannot have an extension, it has to be plain procfile
+2. when you commit, use git commit -m " "
+    with double quotes, do not use single-quotes
