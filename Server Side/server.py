@@ -2,10 +2,9 @@ from flask import Flask, jsonify
 from flask import render_template
 from flask import request
 from call_location import call_location
-from sms_testing import message_rating
 from add_number import add_num
 from spam_update import add_message # spam_update (we are not going to use spam_update) 
-
+from sms_testing_old import message_rating
 #import all functions
 
 app = Flask(__name__)
@@ -38,7 +37,7 @@ def send_message():
 def message_add():
   sms = request.args.get('sms')
   rating = request.args.get('rating')
-  #add_message(sms, rating)
+  add_message(sms, rating)
   message_add = {'title': sms + ' and ' + rating + ' was successfully added'}
   return jsonify(message_add)
   
@@ -46,7 +45,7 @@ def message_add():
 @app.route("/addphonenumber")
 def phonenumber_add():
   number = request.args.get('number')
-  #add_num(number)
+  add_num(number)
   phonenumber_add = {'title':number + ' was successfully added'}
   return jsonify(phonenumber_add)
   
