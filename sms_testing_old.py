@@ -31,13 +31,13 @@ def message_rating(message):
 #Prediction is numpy array, another conditionnal to return a string
 
     if final == 'spam':
-        return_statement = 'This message is spam.-This message has a probability of {0}% of being spam.'.format(chances)
+        return_statement = 'This message is spam. This message has a probability of {0}% of being spam.'.format(chances)
         final_arg = 'spam'
     else:
-        return_statement = 'This message is not spam.-This message has a probability of {0}% of being spam.'.format(chances)
+        return_statement = 'This message is not spam. This message has a probability of {0}% of being spam.'.format(chances)
         final_arg = 'ham'
 
 #I removed the spam update program. I'll put later to see if it works on Android:
 #If we export as APK, then we must export the database of spam messages for Bayes.
 
-    return str(return_statement), final_arg
+    return [str(return_statement), final_arg]
