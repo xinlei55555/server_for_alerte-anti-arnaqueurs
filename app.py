@@ -16,11 +16,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-<<<<<<< HEAD
-  data = {"userId": 1, "id": 1, "title": "this iss the first transit through github"}
-=======
   data = {"title": "HELOOO"}
->>>>>>> a2bb4b960412e5bbff5660f8a74362d7463665b2
   return jsonify(data)
 
 @app.route("/phonenumber") #take number as variable
