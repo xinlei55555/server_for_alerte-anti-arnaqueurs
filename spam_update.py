@@ -1,3 +1,7 @@
+#here are two links that really did help
+#https://www.youtube.com/watch?v=n2aQ6QOMJKE&ab_channel=SessionWithSumit
+#
+
 import gspread
 #this module lets us enter data into the google spread sheet
 
