@@ -5,8 +5,6 @@ import pandas as pd
 from search_number import search_number
 
 def call_location(number):
-   
-
     if '+' in number:
         num = number
     else:
@@ -15,7 +13,6 @@ def call_location(number):
     try:
         x = phonenumbers.parse(num, None)
         location = geocoder.description_for_number(x, 'en')
-        location = location
     except phonenumbers.phonenumberutil.NumberParseException:
         return ['Invalid number.', '']
     

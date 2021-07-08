@@ -26,7 +26,7 @@ def home():
   data = {"title": "HELOOO"}
   return jsonify(data)
 
-#this gives the location of the phonenumber passed in the url
+#this gives the location of the phonenumber passed in the url as well as the rating of the phonenumber
 @app.route("/phonenumber") #take number as variable
 def send_number():
   number = request.args.get('number') #between () is name of variable
@@ -39,8 +39,7 @@ def send_number():
 @app.route("/message")
 def send_message():
   sms = request.args.get('sms')
-  result = message_rating(sms)
-  send_message = {'title': result[0], 'rating': result[1]}
+  send_message = {'title': message_rating(sms)}
   return jsonify(send_message)
 
 #this should be used to add a message if the app got the prediction right
