@@ -12,7 +12,7 @@ from flask import request
 from call_location import call_location
 from add_number import add_num
 from spam_update import add_message, spam_update
-from sms_testing_old import message_rating
+from sms_testing import message_rating
 
 #FOR RATING: 3 possibilities: spam, ham, empty string
 #empty string = cannot find location or invalid number, dont return any icon in flutter
@@ -25,6 +25,7 @@ def home():
   data = {"title": "HELOOO"}
   return jsonify(data)
 
+#this gives the location of the phonenumber passed in the url
 @app.route("/phonenumber") #take number as variable
 def send_number():
   number = request.args.get('number') #between () is name of variable
@@ -33,6 +34,7 @@ def send_number():
   send_number = {'title': result[0], 'rating': result[1]}
   return jsonify(send_number)
 
+#this gives the rating of the message that was passed (spam or ham)
 @app.route("/message")
 def send_message():
   sms = request.args.get('sms')
