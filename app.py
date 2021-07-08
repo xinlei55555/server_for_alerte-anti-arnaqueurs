@@ -13,6 +13,7 @@ from call_location import call_location
 from add_number import add_num
 from spam_update import add_message, spam_update
 from sms_testing import message_rating
+#from search_number import search_number
 
 #FOR RATING: 3 possibilities: spam, ham, empty string
 #empty string = cannot find location or invalid number, dont return any icon in flutter
@@ -67,7 +68,7 @@ def receive_spam_update():
   return jsonify(message_add)
 
 
-
+#this adds a phonenumber to the list of all the spam phonenumbers
 @app.route("/addphonenumber")
 def phonenumber_add():
 #example:
@@ -78,5 +79,16 @@ def phonenumber_add():
   phonenumber_add = {'title': number + ' was successfully added'}
   return jsonify(phonenumber_add)
   
+# i just realized that all i have written rn is just copied from call-location.py, so lemme directly modify from there
+  # #this should look for if a number that is given is already in the spam database
+  # @app.route("/searchphonenumber")
+  # def search_phonenumber():
+  #   number = request.args.get("number")
+  #   verdict = search_number(number)
+  #   if verdict == True:
+  #     console = {'title': number + " is spam"}
+  #   console = {'title': number + " is ham"}
+  #   return jsonify(console)
+
 if __name__ == "__main__":
   app.run()

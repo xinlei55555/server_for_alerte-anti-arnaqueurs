@@ -1,8 +1,11 @@
+import phonenumbers
+from phonenumbers import geocoder
+import pandas as pd
+
+from search_number import search_number
 
 def call_location(number):
-    import phonenumbers
-    from phonenumbers import geocoder
-    import pandas as pd
+   
 
     if '+' in number:
         num = number
@@ -49,21 +52,28 @@ def call_location(number):
             # this means that the number is from quebec
             location = "Quebec North or West, QC"
 
-    df = pd.read_csv('unwanted_calls.csv')
-    numbs = pd.DataFrame(df)
+#this has been moved to the search_number.py file
+    # df = pd.read_csv('unwanted_calls.csv')
+    # numbs = pd.DataFrame(df)
 
-    for ele in numbs['Number']:
-        numb = str(ele).replace('-', '')
-        if numb == '' or numb == 'None':
-            continue
-        else:
-            if number == numb:
-                if not location:
-                    return [number + " has been previously marked spam.", 'spam']
-                else:
-                    return [number + " is from " + location + '. ' + "This number has been previously marked spam.", 'spam']
+    # for ele in numbs['Number']:
+    #     numb = str(ele).replace('-', '')
+    #     if numb == '' or numb == 'None':
+    #         continue
+    #     else:
+    #         if number == numb:
+    #             if not location:
+    #                 return [number + " has been previously marked spam.", 'spam']
+    #             else:
+    #                 return [number + " is from " + location + '. ' + "This number has been previously marked spam.", 'spam']
 
-    if location:
-        return [number + " is from " + location + '.', 'ham']
+#these return the good thing based on if the number was marked spam or nah
+    if search_number(number) == True:
+        if location:
+            return [number + " is from " + location + '. ' + "This number has been previously marked spam.", 'spam']
+        return [number + " has been previously marked spam.", 'spam']
+
     else:
+        if location:
+            return [number + " is from " + location + '.', 'ham']
         return ["Cannot find the location.", '']

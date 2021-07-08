@@ -12,8 +12,7 @@ import gspread
 
 import pandas as pd
 
-from oauth2client.service_account import ServiceAccountCredentials
-    #https://oauth2client.readthedocs.io/en/latest/source/oauth2client.service_account.html
+#https://oauth2client.readthedocs.io/en/latest/source/oauth2client.service_account.html
 
 def message_rating(message):
     #here, instead of using the method proposed in the website i will just be recopying the method that i used for spam_update.py
