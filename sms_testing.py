@@ -7,6 +7,7 @@ from sklearn.naive_bayes import MultinomialNB
     #https://medium.com/game-of-data/play-with-google-spreadsheets-with-python-301dd4ee36eb
 
 #ok,i decided to use gspread
+#NEVERMIND, it is better to use pygsheets
 import gspread
     #https://medium.com/@vince.shields913/reading-google-sheets-into-a-pandas-dataframe-with-gspread-and-oauth2-375b932be7bf
 
