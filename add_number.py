@@ -11,9 +11,19 @@ worksheet = sh.sheet1
 # this tells the module which sheet that we want (because we only have one sheet, we can just write sheet #1)
 
 def add_num(number):
+  #these remove any useless symbols
+  if '+' in number:
+      number = number.replace('+', '')
+  if '-' in number:
+      number = number.replace('-', '')
+  if ')' in number:
+      number = number.replace(')', '')
+  if '(' in number:
+      number = number.replace('(', '')
+  if ' ' in number:
+      number = number.replace(' ', '')
   #this adds the number to the spam number database
-    worksheet.append_row([number])
-   
+  worksheet.append_row([str(number)])
 
 
 #------------------------

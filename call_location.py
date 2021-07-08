@@ -18,7 +18,7 @@ def call_location(number):
         location = location
     except phonenumbers.phonenumberutil.NumberParseException:
         return ['Invalid number.', '']
-
+    
     if '+' in number:
         number = number.replace('+', '')
     if '-' in number:
@@ -77,3 +77,5 @@ def call_location(number):
         if location:
             return [number + " is from " + location + '.', 'ham']
         return ["Cannot find the location.", '']
+
+call_location("(514)857-3943)")

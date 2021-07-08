@@ -34,7 +34,7 @@ def add_message(message, verdict):
 
 
 #Test message:
-add_message('FBI, OPEN UP!','spam')
+
 
 #------------------------
 #old version, when we used to use csv

@@ -18,5 +18,3 @@ def search_number(number_we_are_looking_for):
     #this means that there is a value that has the search value    
         return True
     return False
-
-#print(search_number(10))
