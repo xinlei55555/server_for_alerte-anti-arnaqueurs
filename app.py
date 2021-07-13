@@ -39,7 +39,8 @@ def send_number():
 @app.route("/message")
 def send_message():
   sms = request.args.get('sms')
-  send_message = {'title': message_rating(sms)}
+  result = message_rating(sms)
+  send_message = {'title': result[0], 'rating': result[1]}
   return jsonify(send_message)
 
 #this should be used to add a message if the app got the prediction right
