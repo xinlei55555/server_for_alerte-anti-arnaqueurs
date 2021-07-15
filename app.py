@@ -74,7 +74,7 @@ def phonenumber_add():
   #http://127.0.0.1:5000//addphonenumber?number=4387654255
   #returns {"title":"4387654255 was successfully added"}
   number = request.args.get('number')
-  add_num(number)
+  add_num(str(number))
   phonenumber_add = {'title': number + ' was successfully added'}
   return jsonify(phonenumber_add)
   
