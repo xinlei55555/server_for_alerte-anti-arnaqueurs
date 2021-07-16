@@ -12,8 +12,7 @@ def search_number(number):
     number = str(number)
     #the next few lines are basically just so that i can access the files
     gc = gspread.service_account(filename = "cred.json")
-    #sh = gc.open_by_key("1KmGQBAx4fD9fu3MdWsyKZfwQsoSqp6q0UBPdlkCpTsw")
-    sh = gc.open_by_key("1JsIboMl_2ZfYgfYW9XfSeZTy68uH6XFZrCaPPEd8x4A")
+    sh = gc.open_by_key("1zGbjjH2ibHh6SEctWO_PYxvhkVinMK_0SJvYO4DXtDo")
     worksheet = sh.sheet1   
     # data = worksheet.get_all_values()
 
@@ -33,4 +32,4 @@ def search_number(number):
     #     return True
     # return 
 
-print(search_number(10))
+#print(search_number(10))

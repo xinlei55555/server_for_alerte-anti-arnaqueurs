@@ -65,10 +65,11 @@ def call_location(number):
     #                 return [number + " is from " + location + '. ' + "This number has been previously marked spam.", 'spam']
 
 #these return the good thing based on if the number was marked spam or nah
-    if search_number(number) == True:
+    number_of_times_the_number_was_marked = search_number(number)
+    if number_of_times_the_number_was_marked != 0:
         if location:
-            return [number + " is from " + location + '. ' + "This number has been previously marked spam.", 'spam']
-        return [number + " has been previously marked spam.", 'spam']
+            return [number + " is from " + location + '. ' + "This number has been previously marked spam by " + str(number_of_times_the_number_was_marked) + ' users.', 'spam']
+        return [number + " has been previously marked spam by " + str(number_of_times_the_number_was_marked) + ' users.', ' spam']
 
     else:
         if location:
