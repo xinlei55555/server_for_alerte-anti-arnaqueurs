@@ -8,7 +8,7 @@ import gspread
 gc = gspread.service_account(filename = "cred.json")
 #this tells the gspread module where to look for the informations on our google sheet
 
-sh = gc.open_by_key("1KmGQBAx4fD9fu3MdWsyKZfwQsoSqp6q0UBPdlkCpTsw")
+sh = gc.open_by_key("1JsIboMl_2ZfYgfYW9XfSeZTy68uH6XFZrCaPPEd8x4A")
 #this is part of the link for the google sheet that contains the spam numbers
 
 worksheet = sh.sheet1

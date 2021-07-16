@@ -76,4 +76,4 @@ def call_location(number):
             return [number + " is from " + location + '.', 'ham']
         return ["Cannot find the location.", '']
 
-print(call_location("1(514)857-3943)"))
+# print(call_location("1(514)857-3943)"))

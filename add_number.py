@@ -44,12 +44,12 @@ def add_num(number):
         #VERY IMPORTANT, append_rows, takes a 2D array!
         #if all the rows have been exhausted, it will append
 
-    # cell_with_value = worksheet.findall(number, in_column = 1)
+    cell_with_value = worksheet.findall(number, in_column = 1)
 
-    # if cell_with_value != []:
-    #     row_value = return_row_from_cell(cell_with_value[0])
-    #     worksheet.update_cell(row_value, 2, int(worksheet.cell(row_value,2).value) + 1)
-    #     return 'successfully inserted ' + str(number) + ' at row of index ' + str(row_value)
+    if cell_with_value != []:
+        row_value = return_row_from_cell(cell_with_value[0])
+        worksheet.update_cell(row_value, 2, int(worksheet.cell(row_value,2).value) + 1)
+        return 'successfully inserted ' + str(number) + ' at row of index ' + str(row_value)
     
 #here, I am setting the range that I will serach through
     #VERY IMPORTANT TO START AT THE i = 2 BECAUSE THE WORKSHEET ONLY STARTS AT INDEX 2
@@ -78,9 +78,9 @@ def add_num(number):
     while up_limit - down_limit > 1:
         checking_row = int(round((up_limit + down_limit)/2))
         #BIG ERROR: I placed checking row at the end of the while loop, so even when the loop was supposed to be over, it still modified one last time checking row, fucking everything up
-        if int(worksheet.cell(checking_row,1).value) == number:
-            worksheet.update_cell(checking_row, 2, int(worksheet.cell(checking_row,2).value) + 1)
-            return 'successfully inserted ' + str(number) + ' at row of index ' + str(checking_row)
+        # if int(worksheet.cell(checking_row,1).value) == number:
+        #     worksheet.update_cell(checking_row, 2, int(worksheet.cell(checking_row,2).value) + 1)
+        #     return 'successfully inserted ' + str(number) + ' at row of index ' + str(checking_row)
         
         #print('check ', checking_row, ' up ', up_limit, ' down ', down_limit)
         if int(worksheet.cell(checking_row,1).value) > number:
@@ -98,9 +98,10 @@ def add_num(number):
             #insert_row takes a 1D array
             return 'successfully inserted ' + str(number) + ' at row of index ' + str(i)
         
-        if int(worksheet.cell(i,1).value) == number:
-            worksheet.update_cell(checking_row, 2, int(worksheet.cell(checking_row,2).value) + 1)
-            return 'successfully inserted ' + str(number) + ' at row of index ' + str(i)
+        # if int(worksheet.cell(i,1).value) == number:
+        #     worksheet.update_cell(checking_row, 2, int(worksheet.cell(checking_row,2).value) + 1)
+        #     return 'successfully inserted ' + str(number) + ' at row of index ' + str(i)
+
 
         
 
