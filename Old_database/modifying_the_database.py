@@ -18,18 +18,25 @@ data = worksheet.get_all_values()
 
 df = pd.DataFrame(data, columns = ["Number", "Frequence"])
 
-#i made i=1 because i want to exclude the header 
+# print(df)
+# print(df.iloc[1])
+# df.drop(index = 1, inplace =True)
+# print(df.iloc[1])
+# print(df)
+# df.reset_index(drop = True, inplace = True)
+# print(df.iloc[1])
+# print(df)
 
 temp_number = -1
 temp_index = 1
 i=0
 try:
-    while i < 35482:
+    while i < len(df):
         if int(df.iloc[i, 0]) != temp_number:
             temp_number = int(df.iloc[i,0])
             temp_index = i
             i= i+1
-            #print(i, "first")
+            print(i, "first")
 
         if int(df.iloc[i, 0]) == temp_number:
             df.iloc[temp_index, 1] = int(df.iloc[temp_index, 1]) +1
@@ -37,8 +44,7 @@ try:
             #print(i, "second")
             #here, i don't want to add 1 to the index. The reason is that the .drop removes an index completely. Thus, if I added 1, it wouldn't check the value that had replaced the previous value.
 
-        if i%10000 == 0:
-            print("almost done")
+        #here i am resetting the index, because the drop function seems to just remove entirely
         df.reset_index(drop = True, inplace = True)    
         
 #i decided to use except, cuz i saw that my code was doing everything right until the end, and then, it didn't work, so yea
