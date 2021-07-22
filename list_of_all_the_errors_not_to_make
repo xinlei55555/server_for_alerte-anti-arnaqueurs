@@ -1,5 +1,0 @@
-1. the procfile cannot have an extension, it has to be plain procfile
-2. when you commit, use git commit -m " "
-    with double quotes, do not use single-quotes
-3. try using git push heroku main or master (it depends on the git settings that you chose at the beginning, when you installed)
-4. make sure there are (if using heroku) dynos, using $heroku ps
